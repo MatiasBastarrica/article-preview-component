@@ -16,3 +16,16 @@ body {
   font-family: var(--ff-manrope);
   font-size: 0.813rem;
 }
+
+/* ### CSS RESET ### */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
