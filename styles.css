@@ -75,7 +75,9 @@ main {
 /* ## PREVIEW BODY ## */
 
 .preview__body {
-  padding: 2rem 2rem 1rem;
+  /* padding: 2rem 2rem 1rem; */
+  padding: 2rem;
+  position: relative;
 }
 
 .preview-title {
@@ -98,8 +100,8 @@ main {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.9rem;
-  padding: 1.5rem 2rem;
-  position: relative;
+  /* padding: 1.5rem 2rem; */
+  margin-top: 1.6rem;
 }
 
 .profile-pic {
@@ -178,10 +180,13 @@ button.share-icon-container {
   fill: white;
 }
 
+/* ### MEDIA QUERIES ### */
+
 @media (max-width: 20.313em) {
   .preview__footer,
   .sharing-modal .flex-container {
     flex-direction: column;
+    text-align: center;
   }
 
   .sharing-modal .flex-container {
@@ -191,4 +196,13 @@ button.share-icon-container {
   button.share-icon-container {
     margin-left: unset;
   }
+}
+
+@media (max-width: 14.563em) {
+  .sharing-modal {
+    padding-block: 2.5rem;
+  }
+}
+
+@media (min-width: 68.75em) {
 }
