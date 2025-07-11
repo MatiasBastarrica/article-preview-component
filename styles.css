@@ -25,6 +25,16 @@ img {
   max-width: 100%;
 }
 
+button[class] {
+  border: none;
+}
+
+/* ### UTILITY CLASSES ### */
+
+.hide {
+  display: none;
+}
+
 /* ### GENERAL STYLING ### */
 
 body {
@@ -65,7 +75,7 @@ main {
 /* ## PREVIEW BODY ## */
 
 .preview__body {
-  padding: 2rem;
+  padding: 2rem 2rem 0;
 }
 
 .preview-title {
@@ -88,7 +98,8 @@ main {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.9rem;
-  padding: 0 2rem 2rem;
+  padding: 1.5rem 2rem;
+  position: relative;
 }
 
 .profile-pic {
@@ -108,27 +119,54 @@ main {
   color: var(--grayish-blue);
 }
 
-.share-icon-container {
+button.share-icon-container {
   margin-left: auto;
   background-color: var(--light-grayish-blue);
-  /* padding: 0.4rem; */
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 1rem; */
   border-radius: 100px;
 }
 
-.share-icon {
+/* .share-icon {
   width: 14px;
-}
+} */
 
 .share-icon:hover {
   cursor: pointer;
 }
 
-.share-options {
-  display: none;
+/* ### SHARE OPTIONS MODAL ### */
+
+.sharing-modal {
+  background-color: var(--very-dark-grayish-blue);
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+
+  padding: 1.5rem 2rem;
+}
+
+.sharing-modal .flex-container {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.share-text {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: var(--grayish-blue);
+}
+
+.sharing-modal button.share-icon-container {
+  background-color: var(--desaturated-dark-blue);
+}
+
+.sharing-modal .share-icon path {
+  fill: white;
 }
