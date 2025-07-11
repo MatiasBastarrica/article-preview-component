@@ -204,5 +204,37 @@ button.share-icon-container {
   }
 }
 
-@media (min-width: 68.75em) {
+@media (min-width: 60em) {
+  .preview {
+    max-width: 833px;
+    display: flex;
+  }
+
+  .img-container {
+    flex-shrink: 0;
+  }
+
+  .img-container img {
+    height: 314px;
+    width: 318px;
+    max-width: unset;
+    object-position: top left;
+  }
+
+  .preview__body {
+    padding-inline: 3rem;
+    padding-block: 2rem;
+    /* flex-shrink: 4; */
+  }
+
+  .preview-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .preview-description {
+    font-size: 0.975rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
 }
