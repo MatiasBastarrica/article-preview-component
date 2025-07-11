@@ -75,7 +75,7 @@ main {
 /* ## PREVIEW BODY ## */
 
 .preview__body {
-  padding: 2rem 2rem 0;
+  padding: 2rem 2rem 1rem;
 }
 
 .preview-title {
@@ -152,6 +152,7 @@ button.share-icon-container {
 
 .sharing-modal .flex-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.9rem;
 }
@@ -163,10 +164,31 @@ button.share-icon-container {
   color: var(--grayish-blue);
 }
 
+.social-media-icons {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
 .sharing-modal button.share-icon-container {
   background-color: var(--desaturated-dark-blue);
 }
 
 .sharing-modal .share-icon path {
   fill: white;
+}
+
+@media (max-width: 20.313em) {
+  .preview__footer,
+  .sharing-modal .flex-container {
+    flex-direction: column;
+  }
+
+  .sharing-modal .flex-container {
+    gap: 1.5rem;
+  }
+
+  button.share-icon-container {
+    margin-left: unset;
+  }
 }
