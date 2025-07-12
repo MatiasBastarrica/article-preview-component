@@ -35,6 +35,14 @@ button[class] {
   display: none;
 }
 
+.btn-desktop-pressed-bg {
+  background-color: var(--desaturated-dark-blue) !important;
+}
+
+.btn-desktop-pressed-fill {
+  fill: white !important;
+}
+
 /* ### GENERAL STYLING ### */
 
 body {
@@ -58,12 +66,18 @@ main {
 .preview {
   max-width: 330px;
   border-radius: 0.6rem;
-  overflow: hidden;
+
   background-color: #fff;
   box-shadow: 0px 0px 30px hsl(212, 18%, 86%);
 }
 
 /* ## PREVIEW HEADER ## */
+
+.img-container {
+  border-start-start-radius: 0.6rem;
+  border-start-end-radius: 0.6rem;
+  overflow: hidden;
+}
 
 .img-container img {
   width: 100%;
@@ -122,7 +136,6 @@ main {
 }
 
 button.share-icon-container {
-  margin-left: auto;
   background-color: var(--light-grayish-blue);
   width: 30px;
   height: 30px;
@@ -132,15 +145,20 @@ button.share-icon-container {
   border-radius: 100px;
 }
 
-/* .share-icon {
-  width: 14px;
-} */
+.btn-mobile,
+.btn-desktop {
+  margin-left: auto;
+}
 
 .share-icon:hover {
   cursor: pointer;
 }
 
-/* ### SHARE OPTIONS MODAL ### */
+.btn-desktop {
+  display: none;
+}
+
+/* ### SHARING MODAL MOBILE ### */
 
 .sharing-modal {
   background-color: var(--very-dark-grayish-blue);
@@ -148,7 +166,6 @@ button.share-icon-container {
   width: 100%;
   right: 0;
   bottom: 0;
-
   padding: 1.5rem 2rem;
 }
 
@@ -180,6 +197,8 @@ button.share-icon-container {
   fill: white;
 }
 
+/* ### SHARING MODAL DESKTOP ### */
+
 /* ### MEDIA QUERIES ### */
 
 @media (max-width: 20.313em) {
@@ -193,7 +212,8 @@ button.share-icon-container {
     gap: 1.5rem;
   }
 
-  button.share-icon-container {
+  .btn-mobile,
+  .btn-desktop {
     margin-left: unset;
   }
 }
@@ -212,6 +232,9 @@ button.share-icon-container {
 
   .img-container {
     flex-shrink: 0;
+    border-start-start-radius: 0.6rem;
+    border-end-start-radius: 0.6rem;
+    border-start-end-radius: 0;
   }
 
   .img-container img {
@@ -236,5 +259,48 @@ button.share-icon-container {
     font-size: 0.975rem;
     line-height: 1.6;
     margin-top: 1rem;
+  }
+
+  .btn-mobile {
+    display: none;
+  }
+
+  .btn-desktop {
+    display: block;
+  }
+
+  .btn-desktop:hover svg path {
+    fill: white;
+  }
+
+  .btn-desktop:hover button {
+    background-color: var(--desaturated-dark-blue);
+  }
+
+  .preview__footer {
+    position: relative;
+  }
+
+  .sharing-modal {
+    width: unset;
+    right: -108px;
+    bottom: 67px;
+    border-radius: 0.6rem;
+    padding-block: 1.125rem;
+    box-shadow: 0px 0px 30px hsla(217, 19%, 35%, 0.357);
+  }
+
+  .sharing-modal::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-top-color: var(--very-dark-grayish-blue);
+    border-bottom: 0;
+    margin-left: -12px;
+    margin-bottom: -12px;
   }
 }
